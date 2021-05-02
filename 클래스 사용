@@ -1,0 +1,23 @@
+class user:
+    def __init__(self, name, age, language):
+        self.name = name
+        self.age = age
+        self.language = language
+        print("{0}는 {1}을(를) 할 수 있는 {2}살이다.".format(self.name, self.language, self.age))
+
+J = user("정준영", 20, "C언어")
+
+print("{0}은 내 친구다".format(J.name))
+
+class plus(user):
+    def __init__(self, name, age, language, language1):
+        user.__init__(self, name, age, language)
+        self.language1 = language1
+        print("{0}는 {1}을(를) 할 수 있지만 열심히 공부해서 {2}을(를) 할 수 있게되었다".\
+        format(self.name, self.language, self.language1))
+
+    def study(self, location):
+        print("{0}은 {1}으로 공부를 했다".format(self.name, location))
+
+J1 = plus("정준영", 20, "C언어", "Rust")
+J1.study("인강")
